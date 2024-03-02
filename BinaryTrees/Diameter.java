@@ -1,5 +1,5 @@
 package BinaryTrees;
-import java.util.*;
+
 public class Diameter {
     static class Node{ //O(n)
         int data;
