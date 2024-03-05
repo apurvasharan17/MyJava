@@ -13,15 +13,28 @@ public class TranformToSUmTree {
         }
     }
 
-    public static int transform(Node root,Node Subroot){
+    public static int transform(Node root){
         if(root==null){
             return 0 ;
         }
-        Subroot.data=root.left.data+root.right.data;
-        System.out.println(Subroot.data);
-        transform(root,Subroot);
-        return root.data;
+      int leftChild=transform(root.left);
+      int rightChild=transform(root.right);
+      int data=root.data;
+      int newLeft=root.left==null?0:root.left.data;
+      int newRight=root.right==null?0:root.right.data;
+      root.data=newLeft+leftChild+newRight+rightChild;
+
+      return data;
        
+    }
+    public static void preorder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+
     }
 
     public static void main(String[] args) {
@@ -40,8 +53,8 @@ public class TranformToSUmTree {
         root.left.right=new Node(5);
         root.right.left=new Node(6);
         root.right.right=new Node(7);
-        Node Subroot=new Node(root.left.data+root.right.data);
-        transform(root,Subroot);
+        transform(root);
+        preorder(root);
 
 
     }
