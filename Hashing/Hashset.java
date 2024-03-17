@@ -29,6 +29,7 @@ public class Hashset {
         cities.add("Noida");
         cities.add("Bengaluru");
 
+        @SuppressWarnings("rawtypes") //for warning in Iterator
         Iterator it=cities.iterator();
         while(it.hasNext()){
             System.out.println(it.next());//updation nd print both happens
