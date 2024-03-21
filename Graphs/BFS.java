@@ -25,7 +25,6 @@ public class BFS {
         graph[0].add(new Edge(0,2,1));
 
         graph[1].add(new Edge(1,0,1));
-        graph[1].add(new Edge(1,2,1));
         graph[1].add(new Edge(1,3,1));
 
         graph[2].add(new Edge(2,1,1));
@@ -47,7 +46,7 @@ public class BFS {
         graph[6].add(new Edge(6,5,1));
     }
 
-    public static void bfs(ArrayList<Edge>[] graph){
+    public static void bfs(ArrayList<Edge>[] graph){//O(V+E)
         Queue<Integer> q=new LinkedList<>();
         boolean vis[]=new boolean[graph.length];//vis->visited
         q.add(0);//source->0
@@ -68,6 +67,7 @@ public class BFS {
 
     public static void main(String[] args) {
         int V=7;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph=new ArrayList[V];
         createGraph(graph);
 
