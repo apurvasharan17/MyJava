@@ -63,6 +63,7 @@ public class DFS {
 
     public static void main(String[] args) {
         int V=7;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[]=new ArrayList[V];
         createGraph(graph);
         dfs(graph,0,new boolean[V]);
